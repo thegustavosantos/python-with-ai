@@ -1,0 +1,6 @@
+google-genai
+anthropic
+groq
+openai
+pandas
+numpy

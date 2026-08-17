@@ -1,0 +1,3 @@
+Email 1: Alerta de segurança sobre tentativa de acesso suspeito com recomendação de troca de senha.
+Email 2: Confirmação da aprovação das férias para o período de 10/09 a 25/09.
+Email 3: Confirmação de transferência Pix de R$ 250,00 para João Santos realizada com sucesso.
