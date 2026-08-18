@@ -8,6 +8,7 @@
 import json
 import pandas as pd
 from openai import OpenAI
+from json_repair import repair_json
 
 df_feedbacks = pd.read_csv("data/feedbacks.csv", 
                         sep="$",
@@ -26,7 +27,10 @@ def clean_llm_response(response):
     return response.strip().removeprefix("```json").removesuffix("```").strip()
 
 def parse_llm_json(raw_json):
-    return json.loads(raw_json)
+    try:
+        return json.loads(raw_json)
+    except json.JSONDecodeError:
+        return json.loads(repair_json(raw_json))
 
 def get_sentiment_with_local_llm(feedbacks):
     llm_response = client_openai.chat.completions.create(
