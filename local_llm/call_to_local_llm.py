@@ -6,7 +6,7 @@ client_openai = OpenAI(
 )
 
 llm_response = client_openai.chat.completions.create(
-    model="python.exe -m pip install --upgrade pip",
+    model="google/gemma-3-1b",
     messages=[
         {
             "role": "system",
